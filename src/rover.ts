@@ -4,7 +4,13 @@ export function initPlateau(size: string) {
   return [Number(size[0]), Number(size[2])];
 }
 
-export function newRover(instructions: string) {}
+export function newRover(posAndOriet: string) {
+  return {
+    x: Number(posAndOriet[0]),
+    y: Number(posAndOriet[2]),
+    orientation: posAndOriet[4],
+  };
+}
 
 export function L(rover: Object) {}
 
