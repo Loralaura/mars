@@ -21,29 +21,29 @@ describe("make new rover", () => {
 describe("test L function", () => {
   it("should rotate rover to the left (west)", () => {
     expect(L({ x: 0, y: 0, orientation: "N" })).toStrictEqual({
-      x: 1,
-      y: 2,
+      x: 0,
+      y: 0,
       orientation: "W",
     });
   });
   it("should rotate rover to the left (south)", () => {
     expect(L({ x: 0, y: 0, orientation: "W" })).toStrictEqual({
-      x: 1,
-      y: 2,
+      x: 0,
+      y: 0,
       orientation: "S",
     });
   });
   it("should rotate rover to the left (east)", () => {
     expect(L({ x: 0, y: 0, orientation: "S" })).toStrictEqual({
-      x: 1,
-      y: 2,
+      x: 0,
+      y: 0,
       orientation: "E",
     });
   });
   it("should rotate rover to the left (north)", () => {
     expect(L({ x: 0, y: 0, orientation: "E" })).toStrictEqual({
-      x: 1,
-      y: 2,
+      x: 0,
+      y: 0,
       orientation: "N",
     });
   });
@@ -52,29 +52,29 @@ describe("test L function", () => {
 describe("test R function", () => {
   it("should rotate rover to the right (west)", () => {
     expect(R({ x: 0, y: 0, orientation: "S" })).toStrictEqual({
-      x: 1,
-      y: 2,
+      x: 0,
+      y: 0,
       orientation: "W",
     });
   });
   it("should rotate rover to the right (south)", () => {
     expect(R({ x: 0, y: 0, orientation: "E" })).toStrictEqual({
-      x: 1,
-      y: 2,
+      x: 0,
+      y: 0,
       orientation: "S",
     });
   });
   it("should rotate rover to the right (east)", () => {
     expect(R({ x: 0, y: 0, orientation: "N" })).toStrictEqual({
-      x: 1,
-      y: 2,
+      x: 0,
+      y: 0,
       orientation: "E",
     });
   });
   it("should rotate rover to the right (north)", () => {
     expect(R({ x: 0, y: 0, orientation: "W" })).toStrictEqual({
-      x: 1,
-      y: 2,
+      x: 0,
+      y: 0,
       orientation: "N",
     });
   });

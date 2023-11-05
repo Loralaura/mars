@@ -12,8 +12,59 @@ export function newRover(posAndOriet: string) {
   };
 }
 
-export function L(rover: Object) {}
+export function L(rover: { x: number; y: number; orientation: string }) {
+  let thisRover = rover;
 
-export function R(rover: Object) {}
+  switch (rover.orientation) {
+    case "N":
+      thisRover.orientation = "W";
+      break;
+    case "S":
+      thisRover.orientation = "E";
+      break;
+    case "E":
+      thisRover.orientation = "N";
+      break;
+    case "W":
+      thisRover.orientation = "S";
+      break;
+  }
+  return thisRover;
+}
 
-export function M(rover: Object, plataeu: Array<Number>) {}
+export function R(rover: { x: number; y: number; orientation: string }) {
+  let thisRover = rover;
+
+  switch (rover.orientation) {
+    case "N":
+      thisRover.orientation = "E";
+      break;
+    case "S":
+      thisRover.orientation = "W";
+      break;
+    case "E":
+      thisRover.orientation = "S";
+      break;
+    case "W":
+      thisRover.orientation = "N";
+      break;
+  }
+  return thisRover;
+}
+
+export function M(rover: Object, plataeu: Array<Number>) {
+  /*
+        let thisRover = rover;
+ switch (rover.orientation) {
+   case "N":
+     thisRover.x += 1;
+   case "S":
+    thisRover.x -= 1;
+   case "E":
+     thisRover.y += 1;
+   case "W":
+    thisRover.y -= 1;
+ }
+ return rover
+ */
+}
