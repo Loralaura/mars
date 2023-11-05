@@ -2,10 +2,10 @@ import { readInstructions, initPlateau, newRover, L, R, M } from "../rover";
 
 describe("make plateau", () => {
   it("should return array with the grid size 5, 5", () => {
-    expect(initPlateau("5 5")).toBe([5, 5]);
+    expect(initPlateau("5 5")).toStrictEqual([5, 5]);
   });
   it("should return array with the grid size 3, 4", () => {
-    expect(initPlateau("3 4")).toBe([3, 4]);
+    expect(initPlateau("3 4")).toStrictEqual([3, 4]);
   });
 });
 
