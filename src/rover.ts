@@ -52,19 +52,32 @@ export function R(rover: { x: number; y: number; orientation: string }) {
   return thisRover;
 }
 
-export function M(rover: Object, plataeu: Array<Number>) {
-  /*
-        let thisRover = rover;
- switch (rover.orientation) {
-   case "N":
-     thisRover.x += 1;
-   case "S":
-    thisRover.x -= 1;
-   case "E":
-     thisRover.y += 1;
-   case "W":
-    thisRover.y -= 1;
- }
- return rover
- */
+export function M(
+  rover: { x: number; y: number; orientation: string },
+  plateau: Array<number>
+) {
+  let thisRover = rover;
+  switch (thisRover.orientation) {
+    case "E":
+      if (thisRover.x < plateau[0]) {
+        thisRover.x += 1;
+      }
+      break;
+    case "W":
+      if (thisRover.x > 0) {
+        thisRover.x -= 1;
+      }
+      break;
+    case "N":
+      if (thisRover.x < plateau[1]) {
+        thisRover.y += 1;
+      }
+      break;
+    case "S":
+      if (thisRover.x > 0) {
+        thisRover.y -= 1;
+      }
+      break;
+  }
+  return thisRover;
 }
