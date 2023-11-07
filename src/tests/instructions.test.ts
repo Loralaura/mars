@@ -1,4 +1,4 @@
-import { initPlateau, newRover, L, R, M } from "../instructions";
+import { newRover, L, R, M } from "../instructions";
 import readInstructions from "../plateau";
 import { parseInstruction, parseSizeInput } from "../ui/parse_input";
 
