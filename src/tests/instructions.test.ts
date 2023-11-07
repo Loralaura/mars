@@ -1,5 +1,6 @@
-import { initPlateau, newRover, L, R, M } from "../rover";
+import { initPlateau, newRover, L, R, M } from "../instructions";
 import readInstructions from "../plateau";
+import { parseInstruction, parseSizeInput } from "../ui/parse_input";
 
 describe("make plateau", () => {
   it("should return array with the grid size 5, 5", () => {
@@ -138,5 +139,20 @@ describe("test M function", () => {
       y: 0,
       orientation: "W",
     });
+  });
+});
+
+describe("parse  input", () => {
+  it("should return array with the grid size 5, 5", () => {
+    expect(parseSizeInput("5 5")).toStrictEqual([5, 5]);
+  });
+  it("should return array with the grid size 3, 4", () => {
+    expect(parseInstruction("3 4 N")).toStrictEqual(["r", "34N"]);
+  });
+  it("should return array with the grid size 3, 4", () => {
+    expect(parseInstruction("MLMRMM")).toStrictEqual(["m", "MLMRMM"]);
+  });
+  it("should return array with the grid size 3, 4", () => {
+    expect(parseInstruction("dgfdfg")).toStrictEqual(undefined);
   });
 });
