@@ -1,9 +1,3 @@
-export function readInstructions() {}
-
-export function initPlateau(size: string) {
-  return [Number(size[0]), Number(size[2])];
-}
-
 export function newRover(posAndOriet: string) {
   return {
     x: Number(posAndOriet[0]),
@@ -80,4 +74,8 @@ export function M(
       break;
   }
   return thisRover;
+}
+
+export function initPlateau(size: string) {
+  return [Number(size[0]), Number(size[2])];
 }

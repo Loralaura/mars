@@ -1,4 +1,5 @@
-import { readInstructions, initPlateau, newRover, L, R, M } from "../rover";
+import { initPlateau, newRover, L, R, M } from "../rover";
+import readInstructions from "../plateau";
 
 describe("make plateau", () => {
   it("should return array with the grid size 5, 5", () => {
