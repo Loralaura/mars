@@ -50,7 +50,8 @@ export function M(
   rover: { x: number; y: number; orientation: string },
   plateau: Array<number>
 ) {
-  let thisRover = rover;
+  let thisRover = { ...rover };
+
   switch (thisRover.orientation) {
     case "E":
       if (thisRover.x < plateau[0]) {
@@ -63,19 +64,19 @@ export function M(
       }
       break;
     case "N":
-      if (thisRover.x < plateau[1]) {
+      console.log(thisRover.y, plateau[1]);
+      if (thisRover.y < plateau[1]) {
         thisRover.y += 1;
+
+        console.log("HIT2");
       }
       break;
     case "S":
-      if (thisRover.x > 0) {
+      if (thisRover.y > 0) {
         thisRover.y -= 1;
       }
       break;
   }
+  console.log(thisRover);
   return thisRover;
-}
-
-export function initPlateau(size: string) {
-  return [Number(size[0]), Number(size[2])];
 }

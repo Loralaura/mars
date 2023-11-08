@@ -1,13 +1,17 @@
 import { newRover, L, R, M } from "../instructions";
-import readInstructions from "../plateau";
-import { parseInstruction, parseSizeInput } from "../ui/parse_input";
+import readInstructions from "..";
+import {
+  parseInstruction,
+  parseSizeInput,
+  parseRover,
+} from "../ui/parse_input";
 
 describe("make plateau", () => {
   it("should return array with the grid size 5, 5", () => {
-    expect(initPlateau("5 5")).toStrictEqual([5, 5]);
+    expect(parseSizeInput("5 5")).toStrictEqual([5, 5]);
   });
   it("should return array with the grid size 3, 4", () => {
-    expect(initPlateau("3 4")).toStrictEqual([3, 4]);
+    expect(parseSizeInput("3 4")).toStrictEqual([3, 4]);
   });
 });
 
@@ -147,10 +151,10 @@ describe("parse  input", () => {
     expect(parseSizeInput("5 5")).toStrictEqual([5, 5]);
   });
   it("should return array with the grid size 3, 4", () => {
-    expect(parseInstruction("3 4 N")).toStrictEqual(["r", "34N"]);
+    expect(parseRover("3 4 N")).toStrictEqual("34N");
   });
   it("should return array with the grid size 3, 4", () => {
-    expect(parseInstruction("MLMRMM")).toStrictEqual(["m", "MLMRMM"]);
+    expect(parseInstruction("MLMRMM")).toStrictEqual("MLMRMM");
   });
   it("should return array with the grid size 3, 4", () => {
     expect(parseInstruction("dgfdfg")).toStrictEqual(undefined);
