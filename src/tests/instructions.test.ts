@@ -151,7 +151,7 @@ describe("parse  input", () => {
     expect(parseSizeInput("5 5")).toStrictEqual([5, 5]);
   });
   it("should return array with the grid size 3, 4", () => {
-    expect(parseRover("3 4 N")).toStrictEqual("34N");
+    expect(parseRover("3 4 N")).toStrictEqual("3 4 N");
   });
   it("should return array with the grid size 3, 4", () => {
     expect(parseInstruction("MLMRMM")).toStrictEqual("MLMRMM");
