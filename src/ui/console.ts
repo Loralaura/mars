@@ -24,5 +24,5 @@ const reader = readline.createInterface({
 
 // this function allows us to prompt the user with a question, and call a callback function with whatever string has been input
 export function askQuestion(question: string, callback: (arg: string) => void) {
-  reader.question(`❓ ${question} 👉 `, callback);
+  reader.question(`${question}: `, callback);
 }

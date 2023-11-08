@@ -6,6 +6,10 @@ let rovers: Array<{ x: number; y: number; orientation: string }> = [];
 let plateau: Array<number> = [];
 
 export default function launch() {
+  //Ensures program is reset upon relaunch
+  plateau = [];
+  rovers = [];
+
   askQuestion("Please specify plateau size (eg 5 5)", chooseSize);
 }
 
@@ -21,6 +25,8 @@ function chooseSize(input: string): void {
 }
 
 function askForRover() {
+  console.clear();
+
   askQuestion(
     `Please choose where to place a rover and which direction to face(Eg. 1 5 N) or type "end" to print results`,
     placeRover
@@ -43,6 +49,8 @@ function placeRover(input: string): void {
 }
 
 function askForInstructions() {
+  console.clear();
+
   askQuestion(
     `Please enter instructions for rover(Eg. MMMLMMRM)  `,
     checkInstructions
@@ -71,21 +79,36 @@ function runInstructions(instructions: string) {
         rovers[rovers.length - 1] = R(rovers[rovers.length - 1]);
         break;
       case "M":
-        console.log(M(rovers[rovers.length - 1], plateau));
-        rovers[rovers.length - 1] = M(rovers[rovers.length - 1], plateau);
-        console.log(rovers[rovers.length - 1]);
+        if (!checkForCrash(rovers)) {
+          rovers[rovers.length - 1] = M(rovers[rovers.length - 1], plateau);
+        }
         break;
     }
   });
   return askForRover();
 }
 
+function checkForCrash(
+  rovers: Array<{ x: number; y: number; orientation: string }>
+): boolean {
+  rovers.forEach((rover) => {
+    if (rover.x === M(rovers[rovers.length - 1], plateau).x) {
+      return true;
+    }
+  });
+  return false;
+}
+
 function end() {
+  console.clear();
   print("Printing results...");
   rovers.forEach((rover) => {
     print(`${rover.x} ${rover.y} ${rover.orientation}`);
   });
-  print("🚀Thank you for using MarsRover🚀");
+
+  print("🚀 Thank you for using MarsRover🚀");
+  print("..................................");
+  return askQuestion("     Press ENTER to restart", launch);
 }
 
 launch();

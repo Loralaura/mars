@@ -14,7 +14,7 @@ export function parseRover(input: string): string | undefined {
     typeof parseInt(instruction[2]) === "number" &&
     isOrientation(instruction[4].toUpperCase())
   ) {
-    return instruction;
+    return instruction.toUpperCase();
   }
 
   console.log(instruction);
@@ -22,7 +22,7 @@ export function parseRover(input: string): string | undefined {
 }
 
 export function parseInstruction(input: string): string | undefined {
-  let instruction = input.split(" ").join("");
+  let instruction = input.split(" ").join("").toUpperCase();
 
   const isMove = (x: any): x is Move => MOVE.includes(x);
 

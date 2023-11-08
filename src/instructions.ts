@@ -64,11 +64,8 @@ export function M(
       }
       break;
     case "N":
-      console.log(thisRover.y, plateau[1]);
       if (thisRover.y < plateau[1]) {
         thisRover.y += 1;
-
-        console.log("HIT2");
       }
       break;
     case "S":
@@ -77,6 +74,5 @@ export function M(
       }
       break;
   }
-  console.log(thisRover);
   return thisRover;
 }
