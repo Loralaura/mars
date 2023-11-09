@@ -7,7 +7,7 @@ export function newRover(posAndOriet: string) {
 }
 
 export function L(rover: { x: number; y: number; orientation: string }) {
-  let thisRover = rover;
+  let thisRover = { ...rover };
 
   switch (rover.orientation) {
     case "N":
@@ -27,7 +27,7 @@ export function L(rover: { x: number; y: number; orientation: string }) {
 }
 
 export function R(rover: { x: number; y: number; orientation: string }) {
-  let thisRover = rover;
+  let thisRover = { ...rover };
 
   switch (rover.orientation) {
     case "N":

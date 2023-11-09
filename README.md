@@ -1,7 +1,5 @@
 # 🚀 Welcome to MarsRover! 🚀
 
----
-
 MarsRover is designed to help you co-ordinate rover based missions safely. Set your plateau size, place your rover, and send them off with a set of instructions.
 
 ---
@@ -16,7 +14,7 @@ MarsRover is designed to help you co-ordinate rover based missions safely. Set y
 
 - Enter your instructions for the rover you just initialised, using **M** to move forward, **L** to turn left, and **R** to turn right. Instructions should be entered with no spaces inbetween. EG `MMMRMMLM`
 
-- Now you may initialise another rover, or type `end `to print the results and end the exploration.
+- Now you may initialise another rover, or type `end` to print the results and end the exploration.
 
 - After ending, you may press **enter** to restart the program.
 
